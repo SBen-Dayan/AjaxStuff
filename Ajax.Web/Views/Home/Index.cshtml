@@ -1,8 +1,65 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
-}
+    ViewData["Title"] = "Home";
+}﻿
+<div id="page">
+    <div class="row">
+        <div class="col-md-2 offset-md-3">
+            <button class="btn btn-dark w-100 show-modal">Add Person</button>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-danger w-100" disabled id="delete">Delete</button>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-info w-100 show-modal" disabled id="edit">Edit</button>
+        </div>
+    </div>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
+
+<div class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add Person</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">First Name</label>
+                    <input class="form-control" id="first_name" placeholder="First Name" type="text">
+                </div>
+                <div class="form-group mt-3">
+                    <label class="form-label">Last Name</label>
+                    <input type="text" id="last_name" class="form-control" placeholder="Last Name">
+                </div>
+                <div class="form-group mt-3">
+                    <label class="form-label">Age</label>
+                    <input type="text" id="age" class="form-control" placeholder="Age">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+                    <button class="btn btn-primary" id="save-person">Save</button>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+@section scripts {
+    <script src="/js/people.js"></script>
+}

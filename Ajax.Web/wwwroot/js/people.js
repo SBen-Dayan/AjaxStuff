@@ -33,7 +33,7 @@ $(() => {
     });
 
     $('#edit').on('click', () => {
-        if (!insureValidity()) {
+        if (!ensureValidity()) {
             return;
         }
 
@@ -51,7 +51,7 @@ $(() => {
     })
 
     $('#delete').on('click', () => {
-        if (!insureValidity()) {
+        if (!ensureValidity()) {
             return;
         }
 
@@ -61,10 +61,10 @@ $(() => {
     })
 
     $('tbody').on('click', '.checkbox', function () {
-        insureValidity();
+        ensureValidity();
     })
 
-    function insureValidity() {
+    function ensureValidity() {
         var valid = true;
         let count = 0;
         $(':checked').each(function () {
